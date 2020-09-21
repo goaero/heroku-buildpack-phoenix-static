@@ -19,6 +19,9 @@ cache_dir=$(cd $2 && pwd)
 env_dir=$(cd $3 && pwd)
 heroku_dir=$build_dir/.heroku
 
+# Load the previously environment
+[ -e "${build_dir}/export" ] && source "${build_dir}/export"
+
 source ${build_pack_dir}/lib/common.sh
 source ${build_pack_dir}/lib/build.sh
 
